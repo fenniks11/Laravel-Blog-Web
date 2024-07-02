@@ -16,11 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        // User::factory()->create([
-            //     'name' => 'Fenni Kristiani Sarumaha',
-            //     'email' => 'fennikris@example.com',
-            //     'password' => bcrypt('12345'),
-            // ]);
+        User::factory()->create([
+            'name' => 'Fenni Kristiani Sarumaha',
+            'username' => 'fenniks',
+            'email' => 'fennikris@gmail.com',
+            'password' => bcrypt('12345'),
+        ]);
             
             // Post::create([
                 //     'title' => 'Postingan Pertama',
@@ -46,7 +47,7 @@ class DatabaseSeeder extends Seeder
                         //     'excerpt' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, odio delectus. Sunt debitis quisquam architecto quas',
                         //     'body' => '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, odio delectus. Sunt debitis quisquam architecto quas, soluta asperiores itaque commodi repellendus perspiciatis sequi totam officiis cum aliquid explicabo voluptates dicta!</p> <p> Laborum similique consequuntur voluptas tenetur, hic rem asperiores fuga commodi voluptatibus dolore officiis iure nulla illo possimus deserunt enim quaerat magni dolores doloremque nobis. Aliquid modi debitis minima ea ab,</p> <p>laborum corrupti dolorem, dolores deleniti ipsum enim exercitationem temporibus maxime vel, non aut molestiae! Rerum facilis nesciunt expedita perferendis, sint sequi impedit maxime animi consequatur, optio repudiandae nihil nulla.</p> <p> Blanditiis vero illum reiciendis? Accusantium, fugit ad ab consequatur quos voluptatibus optio dolorem delectus totam! Veniam commodi optio iusto dolore libero repudiandae culpa, velit vero quam ut fuga tempora minima aspernatur?</p>'
                         // ]);
-        User::factory(3)->create();
+        User::factory(2)->create();
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programming',
@@ -59,6 +60,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Personal',
             'slug' => 'personal',
         ]);
-        Post::factory(20)->create();
+        Post::factory(21)->create();
     }
 }

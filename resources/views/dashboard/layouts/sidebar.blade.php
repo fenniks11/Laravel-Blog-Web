@@ -8,7 +8,7 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard') ? 'active' : '' }}"  href="/dashboard">
-              <svg class="bi"><use xlink:href="#house-gear"/></svg>
+              <i class="house"></i>
               Dashboard
             </a>
           </li>
@@ -17,10 +17,24 @@
               <svg class="bi"><use xlink:href="#file-earmark"/></svg>
               My Posts
             </a>
+          </ul>
+        </li>
+        @can('admin')
+        <ul class="nav flex-column">
+          <h6 class="d-flex justify-content-between align-items-center p-md-2 text-muted mt-3">
+            <span>
+              Administrator  
+            </span>
+          </h6>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2 {{ request()->is('dashboard/categories*') ? 'active' : '' }}"  href="/dashboard/categories">
+              <i class="bi bi-grid"></i>
+              Post Categories
+            </a>
           </li>
-          
         </ul>
-        <hr class="my-3">
+        @endcan
+        <hr>
         <ul class="nav flex-column mb-auto">
           <li class="nav-item">
               <form action="/logout" method="POST">
@@ -32,6 +46,7 @@
                 </form>
           </li>
         </ul>
+        
       </div>
     </div>
   </div>
